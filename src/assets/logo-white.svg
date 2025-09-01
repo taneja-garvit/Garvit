@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 850">
+  <!-- Orange circle -->
+  <circle cx="250" cy="425" r="200" fill="#ff9800" />
+  <!-- Black gear (8 teeth, centered in circle) -->
+  <g transform="translate(250,425)">
+    <g>
+      <circle r="70" fill="#000" />
+      <g>
+        <g>
+          <g>
+            <path d="M0,-150 L0,-200" stroke="#000" stroke-width="40" stroke-linecap="butt"/>
+            <path d="M0,150 L0,200" stroke="#000" stroke-width="40" stroke-linecap="butt"/>
+            <path d="M-150,0 L-200,0" stroke="#000" stroke-width="40" stroke-linecap="butt"/>
+            <path d="M150,0 L200,0" stroke="#000" stroke-width="40" stroke-linecap="butt"/>
+            <path d="M-106,-106 L-141,-141" stroke="#000" stroke-width="40" stroke-linecap="butt"/>
+            <path d="M106,106 L141,141" stroke="#000" stroke-width="40" stroke-linecap="butt"/>
+            <path d="M-106,106 L-141,141" stroke="#000" stroke-width="40" stroke-linecap="butt"/>
+            <path d="M106,-106 L141,-141" stroke="#000" stroke-width="40" stroke-linecap="butt"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <!-- Bold 'a.' in white -->
+  <text x="450" y="570" font-size="350" font-family="'Montserrat', 'Arial', sans-serif" font-weight="900" fill="#fff">a.</text>
+</svg>
