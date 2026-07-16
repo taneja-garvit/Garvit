@@ -1,9 +1,13 @@
+import {useEffect} from "react";
 import {motion} from "framer-motion";
 import {Link} from "react-router-dom";
 import {CONTRIBUTIONS} from "src/data/contributions";
 import {staggerContainer, fadeIn} from "lib/constants/motion";
 
 const ContributionsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main className="min-h-screen bg-bg-primary px-6 py-20">
       <div className="max-w-4xl mx-auto">

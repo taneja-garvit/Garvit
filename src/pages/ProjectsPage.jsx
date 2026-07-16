@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import {motion} from "framer-motion";
 import {Link} from "react-router-dom";
 import ProjectCard from "src/components/projects/ProjectCard";
@@ -5,6 +6,9 @@ import {PROJECTS} from "lib/constants/projectList";
 import {staggerContainer, fadeIn} from "lib/constants/motion";
 
 const ProjectsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main className="min-h-screen bg-bg-primary px-6 py-20">
       <div className="max-w-6xl mx-auto">
