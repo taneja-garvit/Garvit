@@ -9,8 +9,8 @@ export function DockPanel() {
       <DockIcon href="https://www.linkedin.com/in/garvit-taneja/">
         <Icons.linkedin className="h-6 w-6 text-[#0a66c2] fill-current dark:text-white" />
       </DockIcon>
-      <DockIcon href="https://wa.me/9058911880">
-        <Icons.whatsapp className="h-6 w-6 text-[#57d163] fill-current dark:text-[#414141]" />
+      <DockIcon href="https://x.com/tanejagarvit_">
+        <Icons.x className="h-6 w-6 fill-current dark:text-white" />
       </DockIcon>
       <DockIcon href={resume}>
         <Icons.download className="h-6 w-6 fill-current dark:text-white" />
@@ -86,6 +86,11 @@ const Icons = {
         fillRule="evenodd"
         d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647"
       />
+    </svg>
+  ),
+  x: (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.627l-5.1-6.694L2.896 21.75H.588l7.753-8.835L.135 2.25h6.59l4.89 6.47L18.244 2.25zM17.15 19.806h1.833L5.64 4.026H3.669L17.15 19.806z" />
     </svg>
   ),
 };

@@ -1,30 +1,34 @@
 import {motion} from "framer-motion";
-import {Tilt} from "react-tilt";
 import {fadeIn} from "lib/constants/motion";
 
-const SkillCard = ({title, Icon, index}) => {
+const SkillCard = ({title, Icon, index, small = false}) => {
   return (
-    <Tilt
-      className="xs:w-[250px] w-full"
-      options={{
-        max: 45,
-        speed: 50,
-      }}
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.1, 0.5)}
+      whileHover={{borderColor: "#00d9a3"}}
+      className={`
+        group flex flex-col justify-center items-center gap-1
+        bg-bg-surface border border-border rounded-sm
+        transition-colors duration-150 cursor-default
+        ${small ? "p-2 w-full aspect-square" : "p-3 w-full aspect-square"}
+      `}
     >
-      <motion.div
-        variants={fadeIn("right", "spring", index * 0.2, 0.75)}
-        whileHover={{scale: 1.3}}
-        className="group shadow-xl md:w-28 md:h-28 w-20 h-20 bg-white dark:bg-[#232323] rounded-[20px] shadow-card"
+      <Icon
+        className={`
+          text-text-muted group-hover:text-accent transition-colors duration-150
+          ${small ? "w-5 h-5" : "w-7 h-7 md:w-8 md:h-8"}
+        `}
+      />
+      <h3
+        className={`
+          font-jetbrains text-center text-text-muted group-hover:text-text-primary
+          transition-colors duration-150 leading-tight
+          ${small ? "text-[9px]" : "text-[10px] md:text-xs"}
+        `}
       >
-        <div className="h-full text-black rounded-[20px] flex justify-center items-center flex-col gap-1 md:p-4 p-1">
-          <Icon className="md:w-10 md:h-10 h-6 w-6 text-black dark:text-white/80  group-hover:text-tertiary dark:group-hover:text-white dark:grayscale" />
-
-          <h3 className="text-tertiary dark:text-white text-center group-hover:flex text-xs w-full justify-center items-center">
-            {title}
-          </h3>
-        </div>
-      </motion.div>
-    </Tilt>
+        {title}
+      </h3>
+    </motion.div>
   );
 };
 

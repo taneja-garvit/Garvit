@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Poppins:wght@200;300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Inter:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,26 +14,15 @@
 *::before,
 *::after {
   margin: 0;
-  font-family: "Poppins", "sans-serif";
-}
-
-body.dark {
-  background-color: black;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background-color: white;
-}
-
-pre {
-  display: block;
-  /* font-family: monospace; */
-  white-space: pre;
-  /* margin: 1em 0px; */
+  background-color: #0a0a0a;
+  color: #e6e6e6;
 }
 
 .archivo-black-regular {
-  font-family: "Archivo Black", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
 }

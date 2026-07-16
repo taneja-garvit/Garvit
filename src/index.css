@@ -1,95 +1,73 @@
 :root {
-  --primary: hsl(0, 2%, 67%);
-  --secondary: rgb(55 65 81);
-  --dark-primary: rgb(43, 42, 42);
-  --dark-secondary: rgb(231, 231, 231);
-  --tertiary: "#2962d6";
+  --bg-primary: #0a0a0a;
+  --bg-surface: #111318;
+  --border-color: #262a33;
+  --text-primary: #e6e6e6;
+  --text-muted: #8b8f98;
+  --accent: #00d9a3;
+  --accent-dim: rgba(0, 217, 163, 0.2);
 }
 
-/* Smooth scrolling for the entire page */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
-/* width */
+/* Scrollbar */
 ::-webkit-scrollbar {
+  width: 6px;
   scrollbar-width: thin;
-  scrollbar-color: var(--secondary) var(--primary);
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: var(--primary);
+  background: var(--bg-surface);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
-  border-radius: 14px;
-  border: 3px solid var(--primary);
+  background-color: var(--border-color);
+  border-radius: 2px;
 }
 
-.dark::-webkit-scrollbar-thumb {
-  background-color: white;
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
 }
 
-.dark::-webkit-scrollbar-track {
-  background: gray;
-}
-
-/* Hide the up arrow button */
-::-webkit-scrollbar-button:start {
-  display: none;
-}
-
-/* Hide the down arrow button */
+/* Hide scrollbar arrow buttons */
+::-webkit-scrollbar-button:start,
 body::-webkit-scrollbar-button:end {
   display: none;
 }
 
-/* Custom scroll behavior for sections */
+/* Scroll offset fix — prevents content clipping behind sticky nav */
 section {
-  scroll-margin-top: 4rem;
-}
-
-/* Smooth transitions for all elements */
-* {
-  transition: all 0.3s ease;
+  scroll-margin-top: 5rem;
 }
 
 /* Improved focus states for accessibility */
 *:focus {
-  outline: 2px solid #8b5cf6;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* Custom animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* Terminal cursor blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
+.terminal-cursor {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+/* Subtle transition only on interactive elements — not the universal "all" */
+a, button, [role="button"] {
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, opacity 150ms ease;
 }

@@ -18,8 +18,10 @@ import {
   TbBrandTypescript,
   SiMysql
   
+  
 } from "src/components/icons";
 import { SiEthers, SiExpress, SiGo, SiNestjs, SiSolana,SiSolidity, SiSpringboot, SiWeb3Dotjs } from "react-icons/si";
+
 
 
 import convexLogo from "src/assets/convex-logo.svg";
@@ -67,7 +69,7 @@ export const PROJECTS = [
 },
 {
   title: "Newswave",
-  description: `A modern news platform delivering real-time articles and trending stories. Built with the MERN stack, featuring category filters, search, and a clean UI for an enhanced reading experience.`,
+  description: `Built a decentralized news-sharing platform using Blockchain and IPFS for tamper-proof publishing, developed a React/Node.js interface for faster onboarding, and integrated OpenAI-powered credibility scoring, achieving over 85% fake-news detection accuracy.`,
   githubURL: "https://github.com/taneja-garvit/NewsWave", // replace with actual link
   liveURL: "https://newswave-phi.vercel.app/", // if live
   techStack: [
@@ -148,5 +150,54 @@ export const PROJECTS = [
     { name: "AWS", icon: <FaAws className="text-xl" /> },
   ],
 },
+{
+  title: "DevHire",
+  description: `DevHire (Microservices Hiring Platform) - Built a 7-service microservices hiring platform using Spring Boot, gRPC, Docker, and JWT RBAC, reducing inter-service latency by 35%, exposing 15+ REST APIs through a centralized API Gateway.`,
+  githubURL: "https://github.com/taneja-garvit/Devhire", // replace with actual link
+  // liveURL: "https://billing-software.vercel.app/", // if live
+  techStack: [
+    { name: "Node.js", icon: <FaNodeJs className="text-xl" /> },
+    { name: "gRPC", icon: <></> },
+    { name: "MongoDB", icon: <TbBrandMongodb className="text-xl" /> },
+    { name: "Docker", icon: <SiDocker className="text-xl" /> },
+    { name: "AWS", icon: <FaAws className="text-xl" /> },
+    
+  ],
+},
+{
+  title: "Resolve AI",
+  description: `Resolve AI (RAG Agent) - Built a LangChain + FastAPI RAG agent with PDF ingestion, embeddings, and FAISS retrieval, integrating ML-based confidence scoring to automate support queries and escalate low-confidence responses.`,
+  githubURL: "https://github.com/taneja-garvit/ResolveAI", // replace with actual link
+  // liveURL: "https://billing-software.vercel.app/", // if live
+  techStack: [
+    { name: "Python", icon: <></> },
+    { name: "LangChain", icon: <></> },
+    { name: "FastAPI", icon: <></> },
+    { name: "Faiss", icon: <></> },
+    { name: "ML Model", icon: <></> },
+    
+    
+  ],
+},
+
+{
+   title: "Payment Ledger System",
+  description: `Payment Ledger System — Built a FastAPI wallet backend with JWT authentication, ACID-safe transfers, idempotent payment APIs, and PostgreSQL optimization using indexing and cursor-based pagination for scalable transaction processing.`,
+  githubURL: "https://github.com/taneja-garvit/wallet-System", // replace with actual link
+  // liveURL: "https://billing-software.vercel.app/", // if live
+  techStack: [
+    { name: "Python", icon: <></> },
+    { name: "FastAPI", icon: <></>  },
+    { name: "PostgreSQL", icon: <></>  },
+    {name: "Deadlock detection", icon: <></>},
+    {name: "Atomic Transactions", icon: <></>},
+    {name: "Idempotent APIs", icon: <></>},
+    {name: "Cursor-based pagination", icon: <></>},
+    {name: "Optimistic Locking", icon: <></>}
+   
+    
+    
+  ],
+}
 
 ];

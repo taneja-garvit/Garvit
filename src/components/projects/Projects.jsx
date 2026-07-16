@@ -1,39 +1,57 @@
 import {forwardRef} from "react";
+import {motion} from "framer-motion";
+import {Link} from "react-router-dom";
 
-import CardSlider from "src/components/projects/CardSlider";
+import ProjectCard from "src/components/projects/ProjectCard";
 import SectionTitle from "src/components/common/SectionTitle";
-
 import SectionWrapper from "src/hoc/SectionWrapper";
+import {PROJECTS} from "lib/constants/projectList";
+import {staggerContainer, fadeIn} from "lib/constants/motion";
+
+// Top 3 strongest backend-relevant projects shown on homepage
+const TOP_PROJECT_TITLES = ["DevHire", "Resolve AI", "Payment Ledger System"];
+const topProjects = PROJECTS.filter((p) => TOP_PROJECT_TITLES.includes(p.title))
+  .sort((a, b) => TOP_PROJECT_TITLES.indexOf(a.title) - TOP_PROJECT_TITLES.indexOf(b.title));
 
 const Projects = forwardRef((_, ref) => {
   return (
     <section
       ref={ref}
       id="projects"
-      className="flex flex-col gap-16 justify-center lg:justify-center items-center
-                min-h-screen relative overflow-hidden
-                bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 
-                dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="flex flex-col justify-center items-center px-6 py-12"
     >
-      {/* Background decorative elements */}
-      {/* <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-pink-400/10 to-orange-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-green-400/5 to-blue-400/5 rounded-full blur-3xl"></div>
-      </div> */}
+      <div className="w-full max-w-6xl mx-auto">
+        <div className="flex flex-col items-center gap-12">
+          <SectionTitle title="Projects" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
-        <SectionTitle title="Projects" />
-        
-        <div className="mt-8 text-center mb-12">
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Explore my latest projects showcasing modern web technologies, 
-            innovative solutions, and creative problem-solving approaches.
-          </p>
-        </div>
-        
-        <div className="h-full md:w-full w-[90%] flex items-center justify-center md:max-h-screen">
-          <CardSlider />
+          {/* Static 3-column responsive grid */}
+          <motion.div
+            variants={staggerContainer(0.15, 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{once: true}}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full"
+          >
+            {topProjects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                variants={fadeIn("up", "spring", index * 0.1, 0.5)}
+              >
+                <ProjectCard {...project} />
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* View all projects link */}
+          <Link
+            to="/projects"
+            className="font-jetbrains text-sm text-red-500 border border-border rounded-sm
+                       px-5 py-2.5 hover:border-accent hover:text-accent transition-colors duration-150
+                       flex items-center gap-2"
+          >
+            View all projects
+            <span className="text-accent">→</span>
+          </Link>
         </div>
       </div>
     </section>

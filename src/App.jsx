@@ -1,9 +1,14 @@
 import {useEffect} from "react";
 import "./App.css";
-import {AboutMe, ContactMe, NavigationBar, Projects, Skills, Summary, Footer} from "./components";
+import {ContactMe, NavigationBar, Projects, Skills, Summary, Footer} from "./components";
+import Experience from "src/components/experience/Experience";
+import OpenSource from "src/components/oss/OpenSource";
 import {Toaster} from "react-hot-toast";
-import Testimonials from "components/testimonials/Testimonials";
+// import Testimonials from "components/testimonials/Testimonials";
 import {ErrorBoundary} from "react-error-boundary";
+import {Routes, Route} from "react-router-dom";
+import ProjectsPage from "src/pages/ProjectsPage";
+import ContributionsPage from "src/pages/ContributionsPage";
 
 const App = () => {
   useEffect(() => {
@@ -11,81 +16,64 @@ const App = () => {
   }, []);
 
   function fallbackRender({error, resetErrorBoundary}) {
-    // Call resetErrorBoundary() to reset the error boundary and retry the render.
-
     return (
-      <div role="alert">
-        <p>Something went wrong:</p>
-        <pre style={{color: "red"}}>{error.message}</pre>
+      <div role="alert" style={{padding: "2rem", color: "#e6e6e6", fontFamily: "monospace"}}>
+        <p style={{color: "#8b8f98"}}>// something went wrong</p>
+        <pre style={{color: "#ff6b6b", marginTop: "0.5rem"}}>{error.message}</pre>
       </div>
     );
   }
 
   return (
-    <main className="relative">
-      {/* Extraordinary animated background */}
-      <div className="fixed inset-0 -z-50 overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
-        
-        {/* Floating geometric shapes */}
-        <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Large floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/5 to-purple-400/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-pink-400/5 to-orange-400/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-
-        {/* Subtle grid pattern */}
-          {/* <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:100px_100px] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)]"></div> */}
-
-        {/* Moving particles */}
-        <div className="absolute inset-0">
-          {[...Array(30)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-white/20 dark:bg-white/10 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${3 + Math.random() * 2}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Animated mesh gradient */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-pulse"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent animate-pulse delay-1000"></div>
-        </div>
-      </div>
+    <main className="relative bg-bg-primary min-h-screen">
+      {/* Subtle terminal grid background */}
+      <div
+        className="fixed inset-0 -z-50 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,217,163,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,217,163,0.02) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
 
       <ErrorBoundary fallbackRender={fallbackRender}>
-        <NavigationBar />
-        <div className="pt-16 relative z-10 flex flex-col gap-32">
-          <Summary index={-1} />
-          <Skills index={0} />
-          <AboutMe index={1} />
-          <Projects index={2} />
-          <Testimonials index={3} />
-          <ContactMe index={4} />
-        </div>
-        <Footer />
-        <Toaster containerStyle={{top: 100}} />
+        <Routes>
+          {/* Main single-page portfolio */}
+          <Route
+            path="/"
+            element={
+              <>
+                <NavigationBar />
+                <div className="pt-16 relative z-10 flex flex-col gap-10">
+                  <Summary index={-1} />
+                  <Experience index={0} />
+                  <Projects index={1} />
+                  <OpenSource index={2} />
+                  <Skills index={3} />
+                  {/* <Testimonials index={4} /> */}
+                  <ContactMe index={4} />
+                </div>
+                <Footer />
+              </>
+            }
+          />
+          {/* All projects page */}
+          <Route path="/projects" element={<ProjectsPage />} />
+          {/* Contributions page */}
+          <Route path="/contributions" element={<ContributionsPage />} />
+        </Routes>
+        <Toaster
+          containerStyle={{top: 100}}
+          toastOptions={{
+            style: {
+              background: "#111318",
+              color: "#e6e6e6",
+              border: "1px solid #262a33",
+              borderRadius: "2px",
+              fontFamily: "monospace",
+            },
+          }}
+        />
       </ErrorBoundary>
     </main>
   );

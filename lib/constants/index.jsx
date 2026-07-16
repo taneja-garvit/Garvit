@@ -15,10 +15,24 @@ import {
   TbBrandMongodb,
   TbBrandTypescript,
   VscFeedback,
+  BsGithub,
 } from "components/icons";
 import {Clerk, Convex} from "lib/constants/projectList";
-import {FaCss3, FaHtml5, FaJava} from "react-icons/fa";
-import { SiEthers, SiExpress, SiGo, SiNestjs, SiSolana, SiSolidity, SiSpringboot, SiWeb3Dotjs } from "react-icons/si";
+import {
+  FaBrain,
+  FaCloud,
+  FaCode,
+  FaDatabase,
+  FaExchangeAlt,
+  FaJava,
+  FaJs,
+  FaLock,
+  FaProjectDiagram,
+  FaRocket,
+  FaSearchengin,
+  FaServer,
+} from "react-icons/fa";
+import {SiGo, SiNextdotjs, SiPostman, SiPython, SiVercel} from "react-icons/si";
 
 export const colors = ["#002B5B", "#87e3fa", "#2962d6", "#FFFFFF", "#232323", "#9fb0d2"];
 
@@ -61,110 +75,140 @@ export const TABS = [
 ];
 
 export const SKILLS = [
-  // Backend & Infra
   {
-    title: "Java",
-    icon: FaJava,
+    title: "JavaScript",
+    icon: FaJs,
     animationDelay: "0.2",
   },
   {
-    title: "Spring Boot",
-    icon: SiSpringboot,
+    title: "Java",
+    icon: FaJava,
     animationDelay: "0.4",
   },
   {
-    title: "Node.js",
-    icon: FaNodeJs,
+    title: "Python",
+    icon: SiPython,
     animationDelay: "0.6",
   },
   {
-    title: "Golang",
+    title: "Go",
     icon: SiGo,
     animationDelay: "0.8",
   },
   {
-    title: "Express.js",
-    icon: SiExpress,
+    title: "TypeScript",
+    icon: TbBrandTypescript,
     animationDelay: "1.0",
   },
-  // {
-  //   title: "Nest.js",
-  //   icon: SiNestjs,
-  //   animationDelay: "1.2",
-  // },
   {
-    title: "MongoDB",
-    icon: TbBrandMongodb,
+    title: "Node.js",
+    icon: FaNodeJs,
+    animationDelay: "1.2",
+  },
+  {
+    title: "FastAPI",
+    icon: FaRocket,
     animationDelay: "1.4",
   },
-  // {
-  //   title: "Firebase",
-  //   icon: SiFirebase,
-  //   animationDelay: "1.6",
-  // },
+  {
+    title: "REST",
+    icon: FaExchangeAlt,
+    animationDelay: "1.6",
+  },
+  {
+    title: "gRPC",
+    icon: FaServer,
+    animationDelay: "1.8",
+  },
+  {
+    title: "JWT",
+    icon: FaLock,
+    animationDelay: "2.0",
+  },
+  {
+    title: "Microservices",
+    icon: FaProjectDiagram,
+    animationDelay: "2.2",
+  },
   {
     title: "Docker",
     icon: SiDocker,
-    animationDelay: "1.8",
+    animationDelay: "2.4",
   },
-  // {
-  //   title: "AWS",
-  //   icon: FaAws,
-  //   animationDelay: "2.0",
-  // },
-  // {
-  //   title: "System Design",
-  //   icon: MdArchitecture,
-  //   animationDelay: "2.2",
-  // },
-
-  // Blockchain / Web3
-  // {
-  //   title: "Solidity",
-  //   icon: SiSolidity,
-  //   animationDelay: "2.4",
-  // },
   {
-    title: "Web3.js",
-    icon: SiWeb3Dotjs,
+    title: "ReactJS",
+    icon: FaReact,
     animationDelay: "2.6",
   },
   {
-    title: "Ethers.js",
-    icon: SiEthers,
+    title: "Next.js",
+    icon: SiNextdotjs,
     animationDelay: "2.8",
   },
   {
-    title: "Solana",
-    icon: SiSolana,
+    title: "LLMs",
+    icon: FaBrain,
     animationDelay: "3.0",
   },
-
-  // Frontend & UI
   {
-    title: "React.js",
-    icon: FaReact,
+    title: "RAG",
+    icon: FaSearchengin,
     animationDelay: "3.2",
   },
   {
-    title: "TypeScript",
-    icon: TbBrandTypescript,
+    title: "LangChain",
+    icon: FaCode,
     animationDelay: "3.4",
   },
   {
-    title: "Tailwind CSS",
-    icon: SiTailwindcss,
+    title: "Vector Databases",
+    icon: FaDatabase,
     animationDelay: "3.6",
   },
   {
-    title: "HTML",
-    icon: FaHtml5,
+    title: "Embeddings",
+    icon: FaDatabase,
     animationDelay: "3.8",
   },
   {
-    title: "CSS",
-    icon: FaCss3,
+    title: "Git/GitHub",
+    icon: BsGithub,
     animationDelay: "4.0",
+  },
+  {
+    title: "AWS S3",
+    icon: FaAws,
+    animationDelay: "4.2",
+  },
+  {
+    title: "CloudWatch",
+    icon: FaCloud,
+    animationDelay: "4.4",
+  },
+  {
+    title: "Postman",
+    icon: SiPostman,
+    animationDelay: "4.6",
+  },
+  {
+    title: "Vercel",
+    icon: SiVercel,
+    animationDelay: "4.8",
+  },
+  {
+    title: "Render",
+    icon: FaCloud,
+    animationDelay: "5.0",
+  },
+  {
+    title: "MongoDB",
+    icon: TbBrandMongodb,
+    animationDelay: "5.2",
+  },
+  {
+    title: "PostgreSQL",
+    icon: FaDatabase,
+    animationDelay: "5.4",
   },
 ];
 

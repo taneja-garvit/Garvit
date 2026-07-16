@@ -19,18 +19,27 @@ export default {
         "wave-white": 'url("/src/assets/wave-white.svg")',
         "wave-black": 'url("/src/assets/wave-black.svg")',
         "wave-grad": 'url("/src/assets/wave-grad.svg")',
-        "custom-grad":
-          "linear-gradient(180deg, rgba(135, 227, 250, 1) 0%, rgba(66, 116, 217, 1) 50%, rgba(27, 76, 131, 1) 100%)",
-        "dark-custom-grad": "linear-gradient(180deg, rgba(35,35,35,1) 0%, rgba(35,35,35,1) 50%)",
       },
       colors: {
-        primary: "#002B5B",
-        secondary: "#87e3fa",
-        tertiary: "#2962d6",
+        // Terminal dark palette
+        "bg-primary": "#0a0a0a",
+        "bg-surface": "#111318",
+        border: "#262a33",
+        "text-primary": "#e6e6e6",
+        "text-muted": "#8b8f98",
+        accent: "#00d9a3",
+        "accent-dim": "rgba(0, 217, 163, 0.2)",
+        // Keep legacy colors for any remaining references
+        primary: "#0a0a0a",
+        secondary: "#00d9a3",
+        tertiary: "#00d9a3",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        archivo: ["Archivo Black", "sans-serif"],
+        jetbrains: ["'JetBrains Mono'", "monospace"],
+        inter: ["Inter", "sans-serif"],
+        // Keep legacy for any remaining references
+        poppins: ["Inter", "sans-serif"],
+        archivo: ["'JetBrains Mono'", "monospace"],
       },
     },
   },

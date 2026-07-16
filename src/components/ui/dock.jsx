@@ -79,7 +79,7 @@ const DockIcon = ({
       target="_blank"
       style={{width}}
       className={cn(
-        "flex aspect-square cursor-pointer items-center justify-center rounded-full bg-neutral-400/40",
+        "flex aspect-square cursor-pointer items-center justify-center text-text-muted hover:text-accent transition-colors duration-150",
         className
       )}
       {...props}
