@@ -8,11 +8,13 @@ import {
   ActiveIndexContextProvider,
 } from "src/contexts/ActiveIndexContextProvider";
 import { HashRouter } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HashRouter>
     <ActiveIndexContextProvider>
       <ThemeProvider>
+        <Analytics />
         <App />
       </ThemeProvider>
     </ActiveIndexContextProvider>
