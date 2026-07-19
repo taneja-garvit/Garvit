@@ -6,6 +6,11 @@ export const CONTRIBUTIONS = [
     ycBatch: "YC S26",
     prs: [
       {
+        title: "feat(cli): add --traces and --seed to wmh play for trace seeding",
+        status: "open",
+        url: "https://github.com/experientiallabs/world-model-harness/pull/185"
+      },
+      {
         title: "feat: seed demo sessions from trace state_before",
         status: "open",
         url: "https://github.com/experientiallabs/world-model-harness/pull/133",
