@@ -182,7 +182,7 @@ export const PROJECTS = [
 
 {
    title: "Payment Ledger System",
-  description: `Payment Ledger System — Built a FastAPI wallet backend with JWT authentication, ACID-safe transfers, idempotent payment APIs, and PostgreSQL optimization using indexing and cursor-based pagination for scalable transaction processing.`,
+  description: `Payment Ledger System - FastAPI wallet backend with ACID-safe transfers and idempotent payment APIs. Load-tested to 150+ concurrent transfers with zero data corruption after diagnosing and fixing a thread-pool bottleneck; PostgreSQL optimized with indexing and cursor-based pagination.`,
   githubURL: "https://github.com/taneja-garvit/wallet-System", // replace with actual link
   // liveURL: "https://billing-software.vercel.app/", // if live
   techStack: [

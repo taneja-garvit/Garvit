@@ -65,22 +65,31 @@ const Intro = () => {
       >
         <p className="text-accent">
           <span className="text-text-muted mr-2">{">"}</span>
-          full-stack engineer (backend-heavy) — Go · gRPC · distributed systems
+          full-stack engineer (backend-heavy) - Go · gRPC · distributed systems
         </p>
         <p className="text-text-muted">
           <span className="mr-2">{">"}</span>
-          building AI systems — RAG pipelines, LangChain agents, MCP tooling
+          I debugged a payment ledger from crashing under 10 concurrent requests to sustaining 250+ concurrent transfers with zero data corruption, tracing the remaining latency ceiling to connection pool exhaustion
+        </p>
+        <p className="text-text-muted">
+          <span className="mr-2">{">"}</span>
+          shaved 35% off inter-service latency redesigning a 7-service platform around gRPC instead of REST
+        </p>
+        <p className="text-text-muted">
+          <span className="mr-2">{">"}</span>
+          building AI systems - RAG pipelines, LangChain agents, MCP tooling
         </p>
         
         <p className="text-text-muted">
           <span className="mr-2">{">"}</span>
-          $15K+ delivered across freelance &amp; startup clients — real users, real requirements, real feedback loops
+          $15K+ delivered across freelance &amp; startup clients - real users, real requirements, real feedback loops
+          <span className="terminal-cursor ml-0.5">_</span>
         </p>
-        <p className="text-text-muted">
+        {/* <p className="text-text-muted">
           <span className="mr-2">{">"}</span>
           building production data pipelines &amp; currently deep in production-grade system design
           <span className="terminal-cursor ml-0.5">_</span>
-        </p>
+        </p> */}
       </motion.div>
 
       {/* Social icons dock */}
