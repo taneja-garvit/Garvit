@@ -82,7 +82,7 @@ const ContactForm = () => {
                 type="text"
                 name="name"
                 disabled={isSending}
-                placeholder="John Doe"
+                placeholder=""
                 className={getInputClass("name")}
               />
               <RenderInputIcon hasError={errors.name || false} isTouched={touchedFields.name || false} />
@@ -113,7 +113,7 @@ const ContactForm = () => {
                 type="email"
                 name="email"
                 disabled={isSending}
-                placeholder="john@example.com"
+                placeholder=""
                 className={getInputClass("email")}
               />
               <RenderInputIcon hasError={errors.email || false} isTouched={touchedFields.email || false} />
